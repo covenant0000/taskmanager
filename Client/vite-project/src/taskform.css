@@ -1,0 +1,117 @@
+/* General Styles */
+.task-form {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.task-form-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+.task-form-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.task-form-label {
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Input and Textarea */
+.task-form-input,
+.task-form-textarea,
+.task-form-select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.task-form-input:focus,
+.task-form-textarea:focus,
+.task-form-select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Textarea */
+.task-form-textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* Select Dropdown */
+.task-form-select {
+  cursor: pointer;
+}
+
+/* Submit Button */
+.task-form-button {
+  background: #ffcc00;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.task-form-button:hover {
+  background: #1f1f1f;
+}
+
+/* Back to Home Button */
+.task-form .back-to-home-button {
+  background-color: #ffcc00; /* Red background */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 15px auto 0; /* Centers the button */
+  display: block; /* Ensures centering */
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.task-form .back-to-home-button:hover {
+  background-color: black;
+  transform: scale(1.05);
+}
+
+.task-form .back-to-home-button:active {
+  background-color: #a30000;
+  transform: scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .task-form {
+    max-width: 90%;
+    padding: 15px;
+  }
+  
+  .task-form-title {
+    font-size: 20px;
+  }
+}

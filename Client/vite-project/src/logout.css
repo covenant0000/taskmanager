@@ -1,0 +1,28 @@
+.logout-item {
+  /* same layout as nav-item */
+  list-style: none;
+  margin-left: 15px; /* spacing between nav items */
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  color: #f44336; /* red */
+  font-weight: bold;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  transition: color 0.3s ease;
+}
+
+.logout-button:hover {
+  color: #d32f2f; /* darker red */
+  
+}
+
+.logout-button:focus {
+  outline: none;
+  text-decoration: underline;
+}

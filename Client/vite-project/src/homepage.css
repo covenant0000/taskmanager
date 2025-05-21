@@ -1,0 +1,156 @@
+/* General Styling */
+.homepage {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #0a0f2c, #000000);
+    color: white;
+    min-height: 100vh;
+    text-align: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f1f1f;
+    padding: 15px 30px;
+    flex-wrap: wrap;
+}
+
+.logo h2 {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.nav-item {
+    margin: 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #ffcc00;
+}
+
+/* Hero Section */
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+@keyframes pulseText {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.hero-title {
+    font-size: 3rem;
+    animation: pulseText 3s infinite ease-in-out;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    animation: pulseText 3s infinite ease-in-out 0.5s;
+}
+
+.hero-cta {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #ffcc00;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero-cta .nav-link {
+    color: #333;
+    text-decoration: none;
+}
+
+.hero-cta:hover {
+    background-color: #e6b800;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .nav-item {
+        margin: 10px 0;
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-cta {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .nav {
+        padding: 15px;
+    }
+
+    .logo h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero-cta {
+        padding: 10px;
+    }
+}

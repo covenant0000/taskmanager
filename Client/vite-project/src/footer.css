@@ -1,0 +1,11 @@
+.footer {
+  background: black; /* Dark blue to black gradient */
+  color: white;
+  text-align: center;
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
+  font-weight: bold;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
