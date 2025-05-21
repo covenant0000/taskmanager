@@ -1,11 +1,11 @@
 {
-  "name": "server",
+  "name": "Server",
   "version": "1.0.0",
-  "main": "Server/server.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node Server.js",
-    "dev": "nodemon Server/server.js",
-    "build": "npm ci",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "npm install",
     "migrate": "npx sequelize-cli db:migrate",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
