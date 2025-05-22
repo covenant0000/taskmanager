@@ -33,7 +33,7 @@ exports.login = (req, res) => {
   res.status(200).json({ message: "Login successful", user });
 };
 
-const User = require("../models/user");
+const User = require("../models/User");
 
 exports.getUsers = async (req, res) => {
   try {
