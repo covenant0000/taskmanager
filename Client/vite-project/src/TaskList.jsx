@@ -15,7 +15,7 @@ function TaskList() {
   useEffect(() => {
     async function fetchTasks() {
       try {
-        const response = await fetch('http://localhost:3000/api/tasks');
+        const response = await fetch('https://taskmanager-q95q.onrender.com/api/tasks');
         if (!response.ok) throw new Error('Failed to fetch tasks');
         const data = await response.json();
         setTasks(data);
@@ -38,7 +38,7 @@ function TaskList() {
 
     if (result.isConfirmed) {
       try {
-        const response = await fetch(`http://localhost:3000/api/tasks/${taskId}`, {
+        const response = await fetch(`https://taskmanager-q95q.onrender.com/api/tasks/${taskId}`, {
           method: 'DELETE',
         });
         if (!response.ok) throw new Error('Failed to delete task');
@@ -56,7 +56,7 @@ function TaskList() {
   const handleToggleCompleted = async (taskId) => {
     try {
       const taskToToggle = tasks.find(task => task.id === taskId);
-      const response = await fetch(`http://localhost:3000/api/tasks/${taskId}`, {
+      const response = await fetch(`https://taskmanager-q95q.onrender.com/api/tasks/${taskId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ completed: !taskToToggle.completed }),
@@ -85,7 +85,7 @@ function TaskList() {
 
   const handleEditSave = async (taskId) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/tasks/${taskId}`, {
+      const response = await fetch(`https://taskmanager-q95q.onrender.com/api/tasks/${taskId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

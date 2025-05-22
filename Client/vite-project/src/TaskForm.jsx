@@ -99,7 +99,7 @@
 //   const handleSubmit = async (event) => {
 //     event.preventDefault();
 //     try {
-//       const response = await fetch('http://localhost:3000/api/tasks', {
+//       const response = await fetch('https://taskmanager-q95q.onrender.com/api/tasks', {
 //         method: 'POST',
 //         headers: { 'Content-Type': 'application/json' },
 //         body: JSON.stringify({
@@ -232,7 +232,7 @@ function TaskForm() {
 
     if (result.isConfirmed) {
       try {
-        const response = await fetch('http://localhost:3000/api/tasks', {
+        const response = await fetch('https://taskmanager-q95q.onrender.com/api/tasks', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
