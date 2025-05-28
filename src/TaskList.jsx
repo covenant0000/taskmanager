@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import './taskList.css';
+import './TaskList.css';
 
 function TaskList() {
   const [tasks, setTasks] = useState([]);
