@@ -30,7 +30,7 @@ function SignUp() {
 
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_API_URL}/api/auth/signup`, // use env var for backend URL
+        "https://taskmanager-q95q.onrender.com/api/auth/signup",
         {
           method: "POST",
           headers: {
@@ -50,7 +50,7 @@ function SignUp() {
         throw new Error(data.message || "Signup failed");
       }
 
-      // Success: navigate to signin page
+      // On success, redirect to signin page
       navigate("/signin");
     } catch (err) {
       setError(err.message);
