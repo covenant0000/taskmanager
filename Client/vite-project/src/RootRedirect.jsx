@@ -29,7 +29,8 @@ function RootRedirect() {
 
   if (validToken === null) return null;
 
-  return <Navigate to={validToken ? '/Homepage' : '/signup'} replace />;
+  // Redirect authenticated users to homepage, others to landing page
+  return <Navigate to={validToken ? '/Homepage' : '/landing'} replace />;
 }
 
 export default RootRedirect;

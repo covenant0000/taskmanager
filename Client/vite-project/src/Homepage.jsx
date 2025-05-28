@@ -1,8 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Logout from "./Logout";
-import "./homepage.css";
-
+import "./homepage.css"; 
 
 function Homepage() {
   return (
@@ -18,9 +17,9 @@ function Homepage() {
           <li className="nav-item">
             <NavLink to="/add-task" className="nav-link">Add Task</NavLink>
           </li>
-          {/* <li className="nav-item">
-           // <NavLink to="/" className="nav-link">Home</NavLink>
-          </li> */}
+          <li className="nav-item">
+            <NavLink to="/dashboard" className="nav-link">Dashboard</NavLink> {}
+          </li>
           <li className="nav-item logout-item">
             <Logout />
           </li>
@@ -33,9 +32,9 @@ function Homepage() {
           <p className="hero-subtitle">
             Get on top of your tasks with our simple and intuitive task list app.
           </p>
-          <button className="hero-cta">
-            <NavLink to="/task-list" className="nav-link">Get Started</NavLink>
-          </button>
+          <NavLink to="/task-list" className="hero-cta">
+            Get Started
+          </NavLink>
         </header>
       </div>
     </div>

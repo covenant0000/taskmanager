@@ -76,7 +76,7 @@
   text-decoration: underline;
 }
 
-/* Responsive styles */
+
 @media (max-width: 768px) {
   .auth-container {
     width: 95%;
@@ -107,4 +107,12 @@
   .auth-container button {
     font-size: 0.9rem;
   }
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #2a2a2a; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh; 
 }

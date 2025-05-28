@@ -1,7 +1,7 @@
 .logout-item {
-  /* same layout as nav-item */
+  
   list-style: none;
-  margin-left: 15px; /* spacing between nav items */
+  margin-left: 15px; 
 }
 
 .logout-button {
@@ -15,10 +15,11 @@
   padding: 0;
   font-family: inherit;
   transition: color 0.3s ease;
+  background-color: #2a2a2a;
 }
 
 .logout-button:hover {
-  color: #d32f2f; /* darker red */
+  color: #d32f2f; 
   
 }
 
