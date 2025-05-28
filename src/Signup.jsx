@@ -14,6 +14,7 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Validate inputs
     if (!name.trim() || !email.trim() || !password || !confirmPassword) {
       setError("Please fill in all fields");
       return;
@@ -25,18 +26,23 @@ function SignUp() {
     }
 
     setLoading(true);
+    setError(null);
+
     try {
-      const response = await fetch("https://taskmanager-q95q.onrender.com/api/auth/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: name,
-          email,
-          password,
-        }),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/api/auth/signup`, // use env var for backend URL
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: name,
+            email,
+            password,
+          }),
+        }
+      );
 
       const data = await response.json();
 
@@ -44,7 +50,7 @@ function SignUp() {
         throw new Error(data.message || "Signup failed");
       }
 
-      setError(null);
+      // Success: navigate to signin page
       navigate("/signin");
     } catch (err) {
       setError(err.message);
@@ -56,26 +62,56 @@ function SignUp() {
   return (
     <div className="auth-container">
       <h2>Sign Up</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Name:</label>
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
+      <form onSubmit={handleSubmit} noValidate>
+        <label htmlFor="name">Name:</label>
+        <input
+          id="name"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+          disabled={loading}
+        />
         
-        <label>Email:</label>
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <label htmlFor="email">Email:</label>
+        <input
+          id="email"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          disabled={loading}
+        />
         
-        <label>Password:</label>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+        <label htmlFor="password">Password:</label>
+        <input
+          id="password"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+          disabled={loading}
+        />
         
-        <label>Confirm Password:</label>
-        <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
+        <label htmlFor="confirmPassword">Confirm Password:</label>
+        <input
+          id="confirmPassword"
+          type="password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          required
+          disabled={loading}
+        />
         
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {error && <p className="error-message">{error}</p>}
         
         <button type="submit" disabled={loading}>
           {loading ? "Signing Up..." : "Sign Up"}
         </button>
         
-        <p>Already have an account? <NavLink to="/signin">Sign In</NavLink></p>
+        <p>
+          Already have an account? <NavLink to="/signin">Sign In</NavLink>
+        </p>
       </form>
     </div>
   );
